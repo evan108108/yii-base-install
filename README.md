@@ -1,8 +1,10 @@
-
 #Yii Base Build With Bootstrap, Composer, etc...
 
 ###Yii Installation
+- git clone --recursive git@github.com:evan108108/yii-base-install.git
+
 - **Standard [Yii](http://yiiframework.com) Install (see below for more info)**
+
 
 ###Composer Installation
 - Change into a directory in your path like cd /usr/local/bin
