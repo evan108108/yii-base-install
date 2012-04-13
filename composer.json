@@ -59,6 +59,17 @@
               "reference":"origin/master"
             }
           }
+        },{
+          "type": "package",
+          "package": {
+            "name": "cg/LintYiiUnit",
+            "version": "master",
+            "source": {
+              "url": "https://github.com/evan108108/LintYiiUnit",
+              "type": "git",
+              "reference":"origin/master"
+            }
+          }
         }
     ],
      "require": {
@@ -68,6 +79,7 @@
         "crisu83/bootstrap": "master",
         "generator4fixtures/gii": "master",
         "idlesign/file": "master",
-        "weavora/wunit": "master"       
+        "weavora/wunit": "master",
+        "cg/LintYiiUnit": "master"       
     }
 }
