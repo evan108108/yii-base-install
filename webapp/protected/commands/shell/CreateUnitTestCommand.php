@@ -1,1 +1,1 @@
-/Users/evan.frolich/Developer/yiic/Yii-with-Users-and-Rights/webapp/protected/vendors/cg/unit-test-yiis/commands/shell/CreateUnitTestCommand.php
+../../vendors/cg/unit-test-yiis/commands/shell/CreateUnitTestCommand.php
