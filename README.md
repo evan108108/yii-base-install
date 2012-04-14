@@ -9,13 +9,13 @@
 ###Composer Installation
 - Change into a directory in your path like cd /usr/local/bin
 
-- Get Composer curl -s http://getcomposer.org/installer | php
+- Get Composer: curl -s http://getcomposer.org/installer | php
 
-- Make the phar executeable chmod a+x composer.phar
+- Make the phar executeable: chmod a+x composer.phar
 
-- Change into a project directory cd /path/to/my/project
+- Change into a project directory: cd /path/to/my/project
 
-- Use Composer as you normally would composer.phar install
+- Use Composer as you normally would: composer.phar install
 
 - Optionally you can rename the composer.phar to composer to make it easier
 
