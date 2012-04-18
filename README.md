@@ -104,6 +104,6 @@ GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CRE
 * Update /webapp/protected/config/main.php with the newly created mysql database name and credentials
 
 * Run the data migration:
-From the Shell cd to /your/project/path/webapp
-% protected/yiic migrate
-% protected/yiic migrate --connectionID=testdb
+* From the Shell cd to /your/project/path/webapp
+* % protected/yiic migrate
+* % protected/yiic migrate --connectionID=testdb
