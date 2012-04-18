@@ -94,9 +94,12 @@ File Permissions Note: You may also have to adjust some other directory permissi
 At a minimum, the webapp/assets/ and webapp/protected/runtime/ directories needs to be writable by your Web server process.
 
 * Create a new database and mysql user account, and configure with appropriate permissions:
-CREATE DATABASE test;
+CREATE DATABASE yii_base;
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
-GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON test.* TO 'test_dbuser'@'localhost';
+GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base.* TO 'admin'@'localhost';
+
+CREATE DATABASE yii_base_test;
+GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base_test.* TO 'admin'@'localhost';
 
 * Update /webapp/protected/config/main.php with the newly created mysql database name and credentials
 
