@@ -4,10 +4,10 @@
        */ 
       Class  UserUnitTest extends CrudBase
       { 
-        public $fixtures = array('users'=>'User');
+        public $fixtures = array('user'=>'User');
 
         public $modelName = 'User';         //Reffers to your Model name
-        public $fixtureRef = 'users';       //Refers to the name of your fixture file
+        public $fixtureRef = 'user';       //Refers to the name of your fixture file
         public $fixtureKeyPrefix = 'User_'; //How your fixture items are keyed Sample_1, Sample_2, Etc...
         public $check_data_consistency_after_save = true;
         public $ignorAttr = array('crt_dtm'=>true, 'lud_dtm'=>true, 'id'=>true, 'password'=>true, 'activkey'=>true);
