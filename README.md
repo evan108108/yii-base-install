@@ -98,7 +98,7 @@ CREATE DATABASE yii_base;
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
 GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base.* TO 'admin'@'localhost';
 
-CREATE DATABASE yii_base_test;
+* CREATE DATABASE yii_base_test;
 GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base_test.* TO 'admin'@'localhost';
 
 * Update /webapp/protected/config/main.php with the newly created mysql database name and credentials
@@ -106,3 +106,4 @@ GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CRE
 * Run the data migration:
 From the Shell cd to /your/project/path/webapp
 % protected/yiic migrate
+% protected/yiic migrate --connectionID=testdb
