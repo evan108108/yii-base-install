@@ -70,6 +70,17 @@
               "reference":"origin/master"
             }
           }
+        },{
+          "type": "package",
+          "package": {
+            "name": "cg/CacheYii",
+            "version": "master",
+            "source": {
+              "url": "https://github.com/evan108108/CacheYii",
+              "type": "git",
+              "reference":"origin/master"
+            }
+          }
         }
     ],
      "require": {
@@ -80,6 +91,7 @@
         "generator4fixtures/gii": "master",
         "idlesign/file": "master",
         "weavora/wunit": "master",
-        "cg/LintYiiUnit": "master"       
+        "cg/LintYiiUnit": "master",
+        "cg/CacheYii": "master"       
     }
 }
