@@ -19,5 +19,28 @@ class Controller extends CController
 	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
 	 * for more details on how to specify this property.
 	 */
-	public $breadcrumbs=array();
+  public $breadcrumbs=array();
+
+  /**
+   * Uses CacheYii to maintian sanity & 
+   * consistantancy when caching with dependencies
+   * Sample Usage->
+   *  $this->cacheWrapper(
+        array(
+          'id'      => 'Airport1',
+          'depend'  => array("Airport"),
+          'cache'   => function(){ return Airport::model()->findByPk(1); }, 
+          'render'  => function($_this, $model) { $_this->render('view',array('model'=>$model,)); },
+          'exp'     => 3600,
+      ));
+   */ 
+  public function cacheWrapper($params)
+  {
+    $cache = EDCache::get($params['id'], $params['depend']);
+    if($cache===false){
+      $cache = $params['cache']();
+      EDCache::set($params['id'], $params, $params['exp']);
+    }
+    $params['render']($this, $cache);
+  }
 }

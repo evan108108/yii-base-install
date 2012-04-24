@@ -24,6 +24,7 @@ return array(
     'ext.restfullyii.components.*',
     'ext.wunit.*',
     'ext.file.*',
+    'exit.CacheYii.*',
 	),
 
 	'modules'=>array(
