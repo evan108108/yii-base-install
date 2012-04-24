@@ -68,7 +68,9 @@ return array(
 			'connectionID'=>'db',
 			'defaultRoles'=>array('Authenticated', 'Guest'),
     ),
-
+    'cache'=>array(
+      'class' => 'CApcCache',
+    ),
     'bootstrap'=>array(
       'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
     ),
