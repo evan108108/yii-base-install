@@ -39,7 +39,7 @@ class Controller extends CController
     $cache = EDCache::get($params['id'], $params['depend']);
     if($cache===false){
       $cache = $params['cache']();
-      EDCache::set($params['id'], $params, $params['exp']);
+      EDCache::set($params['id'], $cache, $params['exp']);
     }
     $params['render']($this, $cache);
   }
