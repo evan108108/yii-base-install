@@ -9,6 +9,8 @@
  
 /**
  * @author Goliatone <burgosemi@gmail.com>
+ * REVISION Extend Bootstrap.php, add methods, then in main.php: 'class'=>'ext.gbootstrap.components.GBootstrap'.
+ * 
  *
  * Modified:
  * -Added wysihtml5.
