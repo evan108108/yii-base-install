@@ -4,9 +4,17 @@
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
  * @copyright Copyright &copy; Christoffer Niska 2011-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version 0.9.12
+ * @version 0.9.11
  */
-
+ 
+/**
+ * @author Goliatone <burgosemi@gmail.com>
+ *
+ * Modified:
+ * -Added wysihtml5.
+ * -Added theming options.
+ */
+ 
 /**
  * Bootstrap application component.
  * Used for registering Bootstrap core functionality.
@@ -26,6 +34,9 @@ class Bootstrap extends CApplicationComponent
 	const PLUGIN_TOOLTIP = 'tooltip';
 	const PLUGIN_TRANSITION = 'transition';
 	const PLUGIN_TYPEAHEAD = 'typeahead';
+	
+	//Added plugins
+	const PLUGIN_WYSIHTML5 = 'wysihtml5';
 
 	/**
 	 * @var boolean whether to register the Bootstrap core CSS (bootstrap.min.css).
@@ -38,11 +49,6 @@ class Bootstrap extends CApplicationComponent
 	 */
 	public $responsiveCss = false;
 	/**
-	 * @var boolean whether to register the Yii-specific CSS missing from Bootstrap.
-	 * @since 0.9.12
-	 */
-	public $yiiCss = true;
-	/**
 	 * @var boolean whether to register jQuery and the Bootstrap JavaScript.
 	 * @since 0.9.10
 	 */
@@ -52,12 +58,9 @@ class Bootstrap extends CApplicationComponent
 	 * @since 0.9.8
 	 */
 	public $plugins = array();
-	/**
-	 * @var boolean whether to enable debugging mode.
-	 */
-	public $debug = false;
 
 	protected $_assetsUrl;
+	protected $_rp = array();
 
 	/**
 	 * Initializes the component.
@@ -79,19 +82,22 @@ class Bootstrap extends CApplicationComponent
 		if ($this->responsiveCss)
 			$this->registerResponsiveCss();
 
-		if ($this->yiiCss)
-			$this->registerYiiCss();
+		$this->registerYiiCss();
 
 		if ($this->enableJS)
 			$this->registerCorePlugins();
 	}
 
 	/**
+	 * @param string $theme Bootstrap theme name, with dot! 
+	 * @see http://bootswatch.com/
+	 * 
 	 * Registers the Bootstrap CSS.
 	 */
-	public function registerCss()
+	public function registerCss($theme = '')
 	{
-		Yii::app()->clientScript->registerCssFile($this->getAssetsUrl().'/css/bootstrap.min.css');
+		//TODO We should not assume dot is there ;) 
+		Yii::app()->clientScript->registerCssFile($this->getAssetsUrl()."/css/{$theme}bootstrap.min.css");
 	}
 
 	/**
@@ -121,13 +127,32 @@ class Bootstrap extends CApplicationComponent
 	 */
 	public function registerCorePlugins()
 	{
-		/** @var CClientScript $cs */
-		$cs = Yii::app()->getClientScript();
-		$cs->registerCoreScript('jquery');
-		$cs->registerScriptFile($this->getAssetsUrl().'/js/bootstrap.min.js');
+		Yii::app()->clientScript->registerCoreScript('jquery');
 
-		$this->registerTooltip();
-		$this->registerPopover();
+		if (!$this->isPluginDisabled(self::PLUGIN_TRANSITION))
+			$this->enableTransitions();
+
+		if (!$this->isPluginDisabled(self::PLUGIN_TOOLTIP))
+			$this->registerTooltip();
+
+		if (!$this->isPluginDisabled(self::PLUGIN_POPOVER))
+			$this->registerPopover();
+		
+		/*
+		 * We register the Wysihtml5 pluging.
+		 * TODO make widget.
+		 */ 
+		 if (!$this->isPluginDisabled(self::PLUGIN_WYSIHTML5))
+			$this->registerWysihtml5();
+	}
+
+	/**
+	 * Enables the Bootstrap transitions plugin.
+	 * @since 0.9.8
+	 */
+	public function enableTransitions()
+	{
+		$this->registerPlugin(self::PLUGIN_TRANSITION);
 	}
 
 	/**
@@ -262,6 +287,24 @@ class Bootstrap extends CApplicationComponent
 	{
 		$this->registerPlugin(self::PLUGIN_TYPEAHEAD, $selector, $options);
 	}
+	
+	/**
+	 * Registers the Bootstrap wysihtml5 extended plugin.
+	 * @param string $selector the CSS selector
+	 * @param array $options the plugin options
+	 * @see https://github.com/jhollingworth/bootstrap-wysihtml5/
+	 * @since 0.9.8
+	 */
+	public function registerWysihtml5($selector = null, $options = array())
+	{
+		/** @var CClientScript $cs */
+		$cs = Yii::app()->getClientScript();
+		$cs->registerCssFile($this->getAssetsUrl().'/css/bootstrap-wysihtml5.css');
+		
+		$this->registerModal(); // Popover requires the modal plugin
+		
+		$this->registerPlugin(self::PLUGIN_WYSIHTML5, $selector, $options,'.wysihtml5');
+	}
 
 	/**
 	 * Sets the target element for the scrollspy.
@@ -283,6 +326,27 @@ class Bootstrap extends CApplicationComponent
 	}
 
 	/**
+	 * Returns whether a plugin is registered.
+	 * @param string $name the name of the plugin
+	 * @return boolean the result
+	 */
+	public function isPluginRegistered($name)
+	{
+		return isset($this->_rp[$name]);
+	}
+
+	/**
+	 * Returns whether a plugin is disabled in the plugin configuration.
+	 * @param string $name the name of the plugin
+	 * @return boolean the result
+	 * @since 0.9.8
+	 */
+	protected function isPluginDisabled($name)
+	{
+		return isset($this->plugins[$name]) && $this->plugins[$name] === false;
+	}
+
+	/**
 	 * Registers a Bootstrap JavaScript plugin.
 	 * @param string $name the name of the plugin
 	 * @param string $selector the CSS selector
@@ -292,6 +356,12 @@ class Bootstrap extends CApplicationComponent
 	 */
 	protected function registerPlugin($name, $selector = null, $options = array(), $defaultSelector = null)
 	{
+		if (!$this->isPluginRegistered($name))
+		{
+			$this->registerScriptFile("bootstrap-{$name}.js");
+			$this->_rp[$name] = true;
+		}
+
 		if (!isset($selector) && empty($options))
 		{
 			// Initialization from extension configuration.
@@ -316,6 +386,16 @@ class Bootstrap extends CApplicationComponent
 	}
 
 	/**
+	 * Registers a JavaScript file in the assets folder.
+	 * @param string $fileName the file name.
+     * @param integer $position the position of the JavaScript file.
+	 */
+	protected function registerScriptFile($fileName, $position=CClientScript::POS_END)
+	{
+		Yii::app()->clientScript->registerScriptFile($this->getAssetsUrl().'/js/'.$fileName, $position);
+	}
+
+	/**
 	* Returns the URL to the published assets folder.
 	* @return string the URL
 	*/
@@ -327,7 +407,7 @@ class Bootstrap extends CApplicationComponent
 		{
 			$assetsPath = Yii::getPathOfAlias('bootstrap.assets');
 
-			if ($this->debug)
+			if (YII_DEBUG)
 				$assetsUrl = Yii::app()->assetManager->publish($assetsPath, false, -1, true);
 			else
 				$assetsUrl = Yii::app()->assetManager->publish($assetsPath);

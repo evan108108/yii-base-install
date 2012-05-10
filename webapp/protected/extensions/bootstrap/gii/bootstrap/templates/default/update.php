@@ -16,10 +16,11 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index')),
-	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create')),
-	array('label'=>'View <?php echo $this->modelClass; ?>','url'=>array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin')),
+	array('label'=>'Actions'),
+	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index'), 'icon' => 'list-alt'),
+	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create'), 'icon' => 'plus-sign'),
+	array('label'=>'View <?php echo $this->modelClass; ?>','url'=>array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>), 'icon' => 'eye-open'),
+	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin'), 'icon' => 'edit'),
 );
 ?>
 

@@ -14,8 +14,9 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index')),
-	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create')),
+	array('label'=>'Actions'),
+	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index'),'icon' => 'list-alt'),
+	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create'),'icon' => 'plus-sign'),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -64,7 +65,7 @@ if($count>=7)
 	echo "\t\t*/\n";
 ?>
 		array(
-			'class'=>'BootButtonColumn',
+			'class'=>'bootstrap.widgets.BootButtonColumn',
 		),
 	),
 )); ?>
