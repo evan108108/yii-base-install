@@ -19,12 +19,12 @@ return array(
 		'application.modules.user.models.*',
 		'application.modules.user.components.*',
 		'application.modules.right.*',
-    'application.modules.rights.components.*',
-    'application.tests.CrudUnit.*',
-    'ext.restfullyii.components.*',
-    'ext.wunit.*',
-    'ext.file.*',
-    'ext.CacheYii.*',
+	    'application.modules.rights.components.*',
+	    'application.tests.CrudUnit.*',
+	    'ext.restfullyii.components.*',
+	    'ext.wunit.*',
+	    'ext.file.*',
+	    'ext.CacheYii.*',
 	),
 
 	'modules'=>array(
@@ -32,11 +32,11 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'Password1',
 		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
-      'ipFilters'=>array('127.0.0.1','::1'),
-      'generatorPaths'=>array(
-          'bootstrap.gii', // since 0.9.1
-          'application.gii'
-        ),
+		      'ipFilters'=>array('127.0.0.1','::1'),
+		      'generatorPaths'=>array(
+		          'bootstrap.gii', // since 0.9.1
+		          'application.gii'
+		        ),
 		),
 		'user'=>array(
 			'tableUsers' => 'user',
@@ -60,6 +60,7 @@ return array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+			'showScriptName'=>false,
 			'rules'=>require(dirname(__FILE__).'/routes.php'),
 		),
 
@@ -67,25 +68,28 @@ return array(
 			'class'=>'RDbAuthManager',
 			'connectionID'=>'db',
 			'defaultRoles'=>array('Authenticated', 'Guest'),
-    ),
-    'cache'=>array(
-      'class' => 'CApcCache',
-    ),
-    'bootstrap'=>array(
-      'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
-    ),
-    
-    'wunit' => array(
-      'class' => 'WUnit'
-    ),
+	    ),
+	    'cache'=>array(
+	      'class' => 'CApcCache',
+	    ),
+	    'bootstrap'=>array(
+	      'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+	    ),
+	    
+	    'wunit' => array(
+	      'class' => 'WUnit'
+	    ),
 		
 		'db'=>require(dirname(__FILE__).'/db.php'),
-    'testdb'=>require(dirname(__FILE__).'/testdb.php'),
+    	'testdb'=>require(dirname(__FILE__).'/testdb.php'),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
             'errorAction'=>'site/error',
         ),
+        'file' => array(
+			'class' => 'application.extensions.file.CFile',
+		),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(

@@ -13,6 +13,19 @@
  * Modified:
  * -Added wysihtml5.
  * -Added theming options.
+ * 
+ * TODO Make public $theme, setter/getter. Check for dot, on call register CSS use $this->theme, if parameter, setTheme.
+ * TODO Make widget for wysihtml5. Figure out a way to make template for custom commands and pannels..
+ * 
+ * Next:
+ * - Sticky: 	 http://s.mechanism.name/bootstrap-addons/#sticky
+ * - Timepicker: https://github.com/jdewit/bootstrap-timepicker
+ * - UplaodKit:  https://github.com/entropillc/UploadKit
+ * 
+ * See:
+ * - Wysihtml5:  https://github.com/jhollingworth/bootstrap-wysihtml5/
+ * - Bootswatch: https://github.com/thomaspark/bootswatch
+ *
  */
  
 /**
@@ -142,8 +155,8 @@ class Bootstrap extends CApplicationComponent
 		 * We register the Wysihtml5 pluging.
 		 * TODO make widget.
 		 */ 
-		 if (!$this->isPluginDisabled(self::PLUGIN_WYSIHTML5))
-			$this->registerWysihtml5();
+		 /*if (!$this->isPluginDisabled(self::PLUGIN_WYSIHTML5))
+			$this->registerWysihtml5();*/
 	}
 
 	/**
