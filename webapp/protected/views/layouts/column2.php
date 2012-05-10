@@ -1,23 +1,31 @@
-<?php $this->beginContent('//layouts/main'); ?>
-<div class="container">
-	<div class="span-19">
-		<div id="content">
-			<?php echo $content; ?>
-		</div><!-- content -->
+<?php $this->beginContent('//layouts/html5'); ?>
+<section class="container">
+	<div class='row'>
+		<div class="span8">
+			<article id="content">
+				<?php echo $content; ?>
+			</article><!-- content -->
+		</div>
+		<div class="span4 last">
+			<aside id="sidebar1">
+			<?php
+				$this->widget('bootstrap.widgets.BootMenu', array(
+				    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
+				    'stacked'=>TRUE, // whether this is a stacked menu
+				    'items'=>array(
+				        array('label'=>'Dashboard', 'url'=>$this->createUrl('/deckjs/dashboard'), 'active'=>true),
+				        array('label'=>'Presentations', 'url'=>$this->createUrl('presentation/admin')),
+				        array('label'=>'Slides', 'url'=> $this->createUrl('slide/admin')),
+				        array('label'=>'Slide Content', 'url'=>$this->createUrl('slidecontent/admin')),
+				    ),
+			    ));
+				$this->widget('bootstrap.widgets.BootMenu', array(			 	
+					'type' => 'list',
+					'items'=>$this->menu,
+					'htmlOptions'=>array('class'=>'well operations'),
+				));
+			?>
+			</aside><!-- sidebar -->
+		</div>
 	</div>
-	<div class="span-5 last">
-		<div id="sidebar">
-		<?php
-			$this->beginWidget('zii.widgets.CPortlet', array(
-				'title'=>'Operations',
-			));
-			$this->widget('zii.widgets.CMenu', array(
-				'items'=>$this->menu,
-				'htmlOptions'=>array('class'=>'operations'),
-			));
-			$this->endWidget();
-		?>
-		</div><!-- sidebar -->
-	</div>
-</div>
-<?php $this->endContent(); ?>
+</section>

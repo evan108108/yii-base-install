@@ -1,7 +1,7 @@
-<?php $this->beginContent('//layouts/main'); ?>
-<div class="container">
-	<div id="content">
+<?php $this->beginContent('//layouts/html5'); ?>
+<section class="container">
+	<article id="content">
 		<?php echo $content; ?>
-	</div><!-- content -->
-</div>
+	</article><!-- content -->
+</section>
 <?php $this->endContent(); ?>
