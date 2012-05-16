@@ -60,7 +60,7 @@ return array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
-			'showScriptName'=>false,
+			'showScriptName'=>FALSE,
 			'rules'=>require(dirname(__FILE__).'/routes.php'),
 		),
 
