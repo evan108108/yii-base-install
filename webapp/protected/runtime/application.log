@@ -101,3 +101,57 @@ Stack trace:
 #7 {main}
 REQUEST_URI=/yii-base-install/webapp/
 ---
+2012/05/16 15:14:14 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.file" is not defined.' in C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CModule.php(106): CComponent->__get('file')
+#1 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\views\layouts\html5.php(42): CModule->__get('file')
+#2 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(127): require('C:\DEV\xampp\ht...')
+#3 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\DEV\xampp\ht...', Array, true)
+#4 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\DEV\xampp\ht...', Array, true)
+#5 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<section class=...')
+#6 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<section class=...')
+#7 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\views\layouts\column1.php(7): CBaseController->endContent()
+#10 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(127): require('C:\DEV\xampp\ht...')
+#11 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\DEV\xampp\ht...', Array, true)
+#12 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(785): CBaseController->renderFile('C:\DEV\xampp\ht...', Array, true)
+#13 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(276): CController->run('')
+#19 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#20 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\DEV\xampp\htdocs\yii-base-install\webapp\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii-base-install/webapp/
+---
+2012/05/16 15:17:12 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.file" is not defined.' in C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CModule.php(106): CComponent->__get('file')
+#1 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\views\layouts\html5.php(42): CModule->__get('file')
+#2 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(127): require('C:\DEV\xampp\ht...')
+#3 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\DEV\xampp\ht...', Array, true)
+#4 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\DEV\xampp\ht...', Array, true)
+#5 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<section class=...')
+#6 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<section class=...')
+#7 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\views\layouts\column1.php(7): CBaseController->endContent()
+#10 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(127): require('C:\DEV\xampp\ht...')
+#11 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\DEV\xampp\ht...', Array, true)
+#12 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(785): CBaseController->renderFile('C:\DEV\xampp\ht...', Array, true)
+#13 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(276): CController->run('')
+#19 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#20 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\DEV\xampp\htdocs\yii-base-install\webapp\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii-base-install/webapp/
+---
