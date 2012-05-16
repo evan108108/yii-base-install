@@ -3,5 +3,5 @@
 )); ?>
 <p>Congratulations! You have successfully created your Yii application</p>
 <br/>
-<p><a class="btn btn-primary btn-large" href="/user/login">Login</a></p>
+<p><a class="btn btn-primary btn-large" href="<?php echo Yii::app()->baseUrl;?>/user/login">Login</a></p>
 <?php $this->endWidget(); ?>
