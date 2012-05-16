@@ -1,0 +1,103 @@
+2012/05/10 21:23:01 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.file" is not defined.' in C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CModule.php(106): CComponent->__get('file')
+#1 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\views\layouts\html5.php(42): CModule->__get('file')
+#2 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(127): require('C:\DEV\xampp\ht...')
+#3 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\DEV\xampp\ht...', Array, true)
+#4 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\DEV\xampp\ht...', Array, true)
+#5 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<section class=...')
+#6 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<section class=...')
+#7 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\views\layouts\column1.php(7): CBaseController->endContent()
+#10 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(127): require('C:\DEV\xampp\ht...')
+#11 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\DEV\xampp\ht...', Array, true)
+#12 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(785): CBaseController->renderFile('C:\DEV\xampp\ht...', Array, true)
+#13 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(276): CController->run('')
+#19 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#20 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\DEV\xampp\htdocs\yii-base-install\webapp\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii-base-install/webapp/
+---
+2012/05/10 21:29:39 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.file" is not defined.' in C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CModule.php(106): CComponent->__get('file')
+#1 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\views\layouts\html5.php(42): CModule->__get('file')
+#2 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(127): require('C:\DEV\xampp\ht...')
+#3 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\DEV\xampp\ht...', Array, true)
+#4 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\DEV\xampp\ht...', Array, true)
+#5 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<section class=...')
+#6 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<section class=...')
+#7 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\views\layouts\column1.php(7): CBaseController->endContent()
+#10 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(127): require('C:\DEV\xampp\ht...')
+#11 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\DEV\xampp\ht...', Array, true)
+#12 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(785): CBaseController->renderFile('C:\DEV\xampp\ht...', Array, true)
+#13 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(276): CController->run('')
+#19 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#20 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\DEV\xampp\htdocs\yii-base-install\webapp\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii-base-install/webapp/
+---
+2012/05/16 14:52:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "webapp/site/page".' in C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('webapp/site/pag...')
+#1 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\DEV\xampp\htdocs\yii-base-install\webapp\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/cg-deck-2.0/webapp/site/page?view=about
+HTTP_REFERER=http://localhost/cg-deck-2.0/webapp/
+---
+2012/05/16 14:55:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1044] Access denied for user 'admin'@'localhost' to database 'yii_base'' in C:\DEV\xampp\htdocs\yii-base-install\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\db\ar\CActiveRecord.php(619): CApplication->getDb()
+#5 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\db\ar\CActiveRecord.php(2267): CActiveRecord->getDbConnection()
+#6 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\db\ar\CActiveRecord.php(383): CActiveRecordMetaData->__construct(Object(User))
+#7 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\modules\user\models\User.php(28): CActiveRecord::model('User')
+#8 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\modules\user\components\UserIdentity.php(27): User::model()
+#9 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\modules\user\models\UserLogin.php(52): UserIdentity->authenticate()
+#10 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\validators\CInlineValidator.php(43): UserLogin->authenticate('password', Array)
+#11 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(UserLogin), 'password')
+#12 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CModel.php(158): CValidator->validate(Object(UserLogin), NULL)
+#13 C:\DEV\xampp\htdocs\yii-base-install\webapp\protected\modules\user\controllers\LoginController.php(19): CModel->validate()
+#14 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\actions\CInlineAction.php(50): LoginController->actionLogin()
+#15 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(276): CController->run('')
+#19 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/login')
+#20 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\DEV\xampp\htdocs\yii-base-install\webapp\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii-base-install/webapp/user/login
+HTTP_REFERER=http://localhost/yii-base-install/webapp/user/login
+---
+2012/05/16 15:04:08 [error] [exception.CException] exception 'CException' with message 'Alias "ext.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\DEV\xampp\htdocs\yii-base-install\yii\framework\YiiBase.php:318
+Stack trace:
+#0 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\YiiBase.php(198): YiiBase::import('ext.bootstrap.c...', true)
+#1 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CModule.php(387): YiiBase::createComponent(Array)
+#2 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CModule.php(493): CModule->getComponent('bootstrap')
+#3 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\base\CApplication.php(146): CModule->preloadComponents()
+#4 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\YiiBase.php(127): CApplication->__construct('C:\DEV\xampp\ht...')
+#5 C:\DEV\xampp\htdocs\yii-base-install\yii\framework\YiiBase.php(100): YiiBase::createApplication('CWebApplication', 'C:\DEV\xampp\ht...')
+#6 C:\DEV\xampp\htdocs\yii-base-install\webapp\index.php(15): YiiBase::createWebApplication('C:\DEV\xampp\ht...')
+#7 {main}
+REQUEST_URI=/yii-base-install/webapp/
+---
