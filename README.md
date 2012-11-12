@@ -25,29 +25,29 @@
 
 
 
-###Yii Web Application
-###=============================
+##Yii Web Application
+======================
 
 
-####REQUIREMENTS
-####------------
-Apache 2 Web Server
-MySQL 5.1+
-PHP 5.3+ Configured with the following extensions:
-PDO
-PDO MySQL
-APC
-GD2
-Mcrypt
-Yii Framework v1.1.8 (Included in git project...no need to download)
+###REQUIREMENTS
+-----------------
+- Apache 2 Web Server
+- MySQL 5.1+
+- PHP 5.3+ Configured with the following extensions:
+- PDO
+- PDO MySQL
+- APC
+- GD2
+- Mcrypt
+- Yii Framework v1.1.8 (Included in git project...no need to download)
 
 
 ###APACHE CHANGES
-###==============
+-----------------
 Whichever apache site you use to run the app, you will need to add a few directives so that we can have friendly urls. 
 Adding the following will get rid of the need to specify the root index.php file. 
-Just add it to the Directory tag in your httpd-vhosts.conf file.
-
+Just add it to the Directory tag in your `httpd-vhosts.conf` file.
+```
 <VirtualHost *:80>
   <Directory "/Users/ben/Sites/yii/test/webapp">
     Options Indexes FollowSymLinks
@@ -67,17 +67,17 @@ Just add it to the Directory tag in your httpd-vhosts.conf file.
 
   </Directory>
 
-  ServerAdmin info@benjaminlhaas.com
-  DocumentRoot "/Users/ben/Sites/yii/test/webapp"
+  ServerAdmin info@webmaster.com
+  DocumentRoot "/Users/admin/www/yii/test/webapp"
   ServerName test.local
   ServerAlias test.local
   ErrorLog "/private/var/log/apache2/yii-test-error_log"
   CustomLog "/private/var/log/apache2/yii-test-access_log" common
 </VirtualHost>
-
+```
 
 ####APPLICATION INSTALLATION
-####--------------------------------------------------------------------------------------------------
+----------------------------
 * Cloning this app from Github will result in the following:
 test/
 	README     [this file]
@@ -85,25 +85,34 @@ test/
 	webapp/    [the web application files]
 
 Create assets and runtime directory. From within application root, do the following:
-mkdir webapp/assets
-chmod 777 webapp/assets
-mkdir webapp/protected/runtime
-chmod 777 webapp/protected/runtime
+```
+$ mkdir webapp/assets
+
+$ chmod 777 webapp/assets
+
+$ mkdir webapp/protected/runtime
+
+$ chmod 777 webapp/protected/runtime
+```
 
 File Permissions Note: You may also have to adjust some other directory permissions so that they are writable by the Web server process. 
 At a minimum, the webapp/assets/ and webapp/protected/runtime/ directories needs to be writable by your Web server process.
 
 * Create a new database and mysql user account, and configure with appropriate permissions:
+```
 CREATE DATABASE yii_base;
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
 GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base.* TO 'admin'@'localhost';
+```
 
 * CREATE DATABASE yii_base_test;
+```
 GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base_test.* TO 'admin'@'localhost';
+```
 
-* Update /webapp/protected/config/main.php with the newly created mysql database name and credentials
+* Update `/webapp/protected/config/main.php` with the newly created mysql database name and credentials
 
-* Run the data migration:
-* From the Shell cd to /your/project/path/webapp
-* % protected/yiic migrate
-* % protected/yiic migrate --connectionID=testdb
+* Run the data migration: _From the Shell_
+ * ``$ cd to /your/project/path/webapp``
+ * ``$ protected/yiic migrate``
+ * ``$ protected/yiic migrate --connectionID=testdb``
