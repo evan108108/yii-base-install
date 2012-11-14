@@ -75,6 +75,31 @@ Just add it to the Directory tag in your `httpd-vhosts.conf` file.
   CustomLog "/private/var/log/apache2/yii-test-access_log" common
 </VirtualHost>
 ```
+Also, in your local environment you might want to update the `hosts`:
+```
+sudo nano /private/etc/hosts
+```
+Should open something like this:
+```
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+fe80::1%lo0     localhost
+```
+
+Just add the `ServerAlias` you used in the `httpd-vhosts.conf` 
+```
+##Dev stuff
+127.0.0.1       test.local
+```
+
+Now, you can access your app typing *test.local* in your browser.
 
 ####APPLICATION INSTALLATION
 ----------------------------
