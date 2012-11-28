@@ -1,9 +1,12 @@
-<phpunit
-  bootstrap="bootstrap.php"
-  convertErrorsToExceptions="true"
-  convertNoticesToExceptions="true"
-  convertWarningsToExceptions="true"
-  printerClass="WUnit_ResultPrinter"
-  printerFile="../extensions/wunit/PHPUnit/ResultPrinter.php"
-  stopOnFailure="false"
-/>
+<phpunit bootstrap="bootstrap.php"
+		colors="false"
+		convertErrorsToExceptions="true"
+		convertNoticesToExceptions="true"
+		convertWarningsToExceptions="true"
+		stopOnFailure="false">
+
+	<selenium>
+		<browser name="Firefox" browser="*firefox" />
+	</selenium>
+
+</phpunit>

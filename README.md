@@ -1,28 +1,9 @@
-#Yii Base Build With Bootstrap, Composer, etc...
+#Yii Base Build With Bootstrap, etc...
 
 ###Yii Installation
-- git clone --recursive git@github.com:evan108108/yii-base-install.git && cd yii-base-install && composer.phar update
+- git clone --recursive [repo]
 
 - **Standard [Yii](http://yiiframework.com) Install (see below for more info)**
-
-
-###Composer Installation
-- Change into a directory in your path like cd /usr/local/bin
-
-- Get Composer: curl -s http://getcomposer.org/installer | php
-
-- Make the phar executeable: chmod a+x composer.phar
-
-- Change into a project directory: cd /path/to/my/project
-
-- Use Composer as you normally would: composer.phar install
-
-- Optionally you can rename the composer.phar to composer to make it easier
-
-- Optionally add to your ~/.bash_profile: alias composer=composer.phar
-
-
-
 
 
 ##Yii Web Application

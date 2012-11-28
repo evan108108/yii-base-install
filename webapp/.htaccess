@@ -1,0 +1,14 @@
+php_value post_max_size 35M
+php_value upload_max_filesize 30M
+
+Options FollowSymLinks
+Order deny,allow
+Allow from all
+Satisfy all
+IndexIgnore */*
+RewriteEngine on
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward it to index.php
+RewriteRule . index.php
