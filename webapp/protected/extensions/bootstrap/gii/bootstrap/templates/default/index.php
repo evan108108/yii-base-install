@@ -13,15 +13,14 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(
-	array('label'=>'Actions'),
-	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create'),'icon' =>  'plus-sign'),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin'), 'icon' => 'edit'),
+	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create')),
+	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin')),
 );
 ?>
 
 <h1><?php echo $label; ?></h1>
 
-<?php echo "<?php"; ?> $this->widget('bootstrap.widgets.BootListView',array(
+<?php echo "<?php"; ?> $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>

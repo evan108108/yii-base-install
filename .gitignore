@@ -39,10 +39,18 @@ Thumbs.db
 #######################
 *.sdocml
 .project
+*.tmproj
+*.sublime-project
+*.sublime-workspace
 
 #Yii FILES
 #######################
 assets/*
+webapp/assets/*
+
+#TEMP & TRASH
+#######################
+*.old
 
 webapp/protected/runtime/*
 =======
@@ -51,17 +59,5 @@ webapp/protected/runtime/application.log
 webapp/protected/runtime/application.log.*
 webapp/protected/runtime/cache/*
 webapp/protected/tests/protected/runtime/cache/*
-webapp/assets/*
 
-*.tmproj
-webapp/DZDB/app/model/Offer.js
-webapp/DZDB/app/model/Reserve.js
-webapp/DZDB/app/model/ShippingMethod.js
-webapp/DZDB/app/model/WorkSublocation.js
-webapp/DZDB/app/store/Image.js
-webapp/DZDB/app/store/Offer.js
-webapp/DZDB/app/store/Reserve.js
-webapp/DZDB/app/store/ShippingMethod.js
-webapp/DZDB/app/store/WorkSublocation.js
-dzdb.sublime-project
-dzdb.sublime-workspace
+

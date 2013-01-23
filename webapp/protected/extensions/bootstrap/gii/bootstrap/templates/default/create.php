@@ -14,9 +14,8 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(
-	array('label'=>'Actions'),
-	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index'), 'icon' => 'list-alt'),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin'), 'icon' => 'edit'),
+	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index')),
+	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin')),
 );
 ?>
 

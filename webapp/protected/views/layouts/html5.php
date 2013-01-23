@@ -68,14 +68,14 @@
 		?>
 		<nav id="main-nav" role="navigation">
 			<div id="mainmenu" class="navbar-fixed-top"> 
-				<?php $this->widget('bootstrap.widgets.BootNavbar',array(
+				<?php $this->widget('bootstrap.widgets.TbNavbar',array(
 					'fixed'=>false,
 					'brand'=>Yii::app()->name,
 					'brandUrl'=>'#',
 					'collapse'=>true,
 					'items'=>array(
 						array(
-						'class'=>'bootstrap.widgets.BootMenu',
+						'class'=>'bootstrap.widgets.TbMenu',
 						'items'=>array(
 							array('label'=>'Home', 'url'=>array('/site/index')),
 							array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),

@@ -1,4 +1,4 @@
-<?php $this->beginWidget('bootstrap.widgets.BootHero', array(
+<?php $this->beginWidget('bootstrap.widgets.TbHeroUnit', array(
     'heading'=>CHtml::encode(Yii::app()->name),
 )); ?>
 <p>Congratulations! You have successfully created your Yii application</p>
