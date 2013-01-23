@@ -1,4 +1,4 @@
-<?php $this->widget('bootstrap.widgets.BootBreadcrumbs', array(
+<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
     'links'=>array(
 	      (UserModule::t('Users'))=>array('admin'),
 	      $model->username=>array('view','id'=>$model->id),

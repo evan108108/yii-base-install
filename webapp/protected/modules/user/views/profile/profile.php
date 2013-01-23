@@ -29,7 +29,7 @@
   foreach($profileData as $key=>$value)
     $profileKeys[] = array('name'=>$key, 'label'=>$key);
 
-  $this->widget('bootstrap.widgets.BootDetailView', array(
+  $this->widget('bootstrap.widgets.TbDetailView', array(
     'data'=>$profileData,
     'attributes'=>$profileKeys,
   ));

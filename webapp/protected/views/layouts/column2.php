@@ -9,7 +9,7 @@
 		<div class="span4 last">
 			<aside id="sidebar1">
 			<?php
-				$this->widget('bootstrap.widgets.BootMenu', array(
+				$this->widget('bootstrap.widgets.TbMenu', array(
 				    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
 				    'stacked'=>TRUE, // whether this is a stacked menu
 				    'items'=>array(
@@ -19,7 +19,7 @@
 				        array('label'=>'Slide Content', 'url'=>$this->createUrl('slidecontent/admin')),
 				    ),
 			    ));
-				$this->widget('bootstrap.widgets.BootMenu', array(			 	
+				$this->widget('bootstrap.widgets.TbMenu', array(			 	
 					'type' => 'list',
 					'items'=>$this->menu,
 					'htmlOptions'=>array('class'=>'well operations'),

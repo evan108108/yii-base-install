@@ -8,7 +8,10 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Yii Bootstrap',
-
+    
+    //Default theme.
+    'theme'=> 'base-theme',
+    
 	// preloading 'log' component
 	'preload'=>array('log', 'bootstrap'),
 
@@ -58,7 +61,16 @@ return array(
 			'allowAutoLogin'=>true,
 			'loginUrl'=>array('/user/login'),
 		),
-		
+		'bootstrap'=>array(
+           'class'=>'application.components.GBootstrap', // assuming you extracted bootstrap under extensions
+           'theme' => 'light-grey', //'dark | light-grey',
+           // 'theme_path' =>'/yii-base/webapp/assets/4faee1eb/css/'
+           //TODO:Implement this one!
+           /*'plugins' => array(
+             'button' => array(),
+             'dropdown' => array()
+             )*/
+       ),
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'showScriptName'=>FALSE,
@@ -72,9 +84,6 @@ return array(
 	    ),
 	    'cache'=>array(
 	      'class' => 'CApcCache',
-	    ),
-	    'bootstrap'=>array(
-	      'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
 	    ),
 	    
 	    'wunit' => array(

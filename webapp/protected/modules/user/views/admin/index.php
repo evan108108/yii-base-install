@@ -12,7 +12,7 @@
 	));
 ?>
 
-<?php $this->widget('bootstrap.widgets.BootGridView', array(
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
     'type'=>'striped bordered condensed',
     'dataProvider'=>$dataProvider,
     'template'=>"{items}",
@@ -49,7 +49,7 @@
 			'value'=>'User::itemAlias("AdminStatus",$data->superuser)',
 		),
 		array(
-      'class'=>'bootstrap.widgets.BootButtonColumn',
+      'class'=>'bootstrap.widgets.TbButtonColumn',
       'htmlOptions'=>array('style'=>'width: 50px'),
     ),
 	),

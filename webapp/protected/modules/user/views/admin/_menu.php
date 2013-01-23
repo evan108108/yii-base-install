@@ -5,7 +5,7 @@ if(UserModule::isAdmin()) {
 } else {
   $userList = array('label'=>'List User', 'url'=>Yii::app()->createUrl('user'), 'active'=>true);
 }
-$this->widget('bootstrap.widgets.BootMenu', array(
+$this->widget('bootstrap.widgets.TbMenu', array(
   'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
   'stacked'=>false, // whether this is a stacked menu
   'items'=>array(
@@ -17,7 +17,7 @@ $this->widget('bootstrap.widgets.BootMenu', array(
   ),
 )); ?>
 
-<?php if(isset($list)): $this->widget('bootstrap.widgets.BootMenu', array(
+<?php if(isset($list)): $this->widget('bootstrap.widgets.TbMenu', array(
   'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
   'stacked'=>false, // whether this is a stacked menu
   'items'=>$list,

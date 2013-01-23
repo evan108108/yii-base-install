@@ -1,4 +1,4 @@
-<?php $this->widget('bootstrap.widgets.BootButtonGroup', array(
+<?php $this->widget('bootstrap.widgets.TbButtonGroup', array(
     'buttons'=>array(
       array(
         'label'=>Rights::t('core', 'Assignments'),
