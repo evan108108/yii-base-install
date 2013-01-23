@@ -49,7 +49,7 @@ Adding the following will get rid of the need to specify the root index.php file
 Just add it to the Directory tag in your `httpd-vhosts.conf` file.
 ```
 <VirtualHost *:80>
-  <Directory "/Users/ben/Sites/yii/test/webapp">
+  <Directory "/Users/admin/www/yii/test/webapp">
     Options Indexes FollowSymLinks
     AllowOverride All
     Order deny,allow
