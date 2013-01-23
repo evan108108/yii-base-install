@@ -109,11 +109,15 @@ At a minimum, the webapp/assets/ and webapp/protected/runtime/ directories needs
 CREATE DATABASE yii_base;
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
 GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base.* TO 'admin'@'localhost';
+CREATE DATABASE yii_base_test;
+GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base_test.* TO 'admin'@'localhost';
 ```
 
-* CREATE DATABASE yii_base_test;
+If you get the following MySQL error `ERROR 1396 (HY000): Operation CREATE USER failed for 'admin'@'localhost'`:
 ```
-GRANT INSERT, SELECT, UPDATE, INDEX, DELETE, CREATE, DROP, ALTER, SHOW VIEW, CREATE VIEW ON yii_base_test.* TO 'admin'@'localhost';
+DROP USER admin@localhost;
+FLUSH PRIVILEGES;
+CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
 ```
 
 * Update `/webapp/protected/config/main.php` with the newly created mysql database name and credentials
