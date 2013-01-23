@@ -1,0 +1,9 @@
+Installation:
+Simply drop LintYiiUnitTest.php into protected/tests/unit directory.
+ *If you use a behaviors DIR (protected/behaviors) like I do then you can uncomment the testBehaviorsForErrors test to include coverage. 
+
+Description:
+LintYiiUnit checks your Models, Views, Controllers, Components & Commands for php syntax errors.  
+
+System Requirements:
+OS: OSX or Linux
