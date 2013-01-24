@@ -99,6 +99,8 @@ $ chmod 777 webapp/assets
 $ mkdir webapp/protected/runtime
 
 $ chmod 777 webapp/protected/runtime
+
+$ chmod 777 webapp/protected/{models, controllers, views}
 ```
 
 File Permissions Note: You may also have to adjust some other directory permissions so that they are writable by the Web server process. 

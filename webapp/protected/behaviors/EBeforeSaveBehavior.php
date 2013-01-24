@@ -1,4 +1,5 @@
 <?php
+//TODO: MAKE KEYS PARAMS!!
   class EBeforeSaveBehavior extends CActiveRecordBehavior
   {
     public function beforeSave($event)
