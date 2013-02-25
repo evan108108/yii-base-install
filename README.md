@@ -80,7 +80,13 @@ Just add the `ServerAlias` you used in the `httpd-vhosts.conf`
 127.0.0.1       test.local
 ```
 
+Restart apache:
+```
+sudo /opt/local/apache2/bin/apachectl -k restart
+```
+
 Now, you can access your app typing *test.local* in your browser.
+
 
 ####APPLICATION INSTALLATION
 ----------------------------
