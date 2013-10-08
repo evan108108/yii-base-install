@@ -1,7 +1,9 @@
-<?php $this->breadcrumbs =  array(
-	"<h3>".UserModule::t('Users')=>array('admin')."</h3>",
-  UserModule::t('Manage'),
-); ?>
+<?php
+$this->breadcrumbs =  array(
+	UserModule::t('Users')=>'admin',
+  	UserModule::t('Manage'),
+);
+?>
 
 <h1><?php echo UserModule::t("Manage Users"); ?></h1>
 <br/>
